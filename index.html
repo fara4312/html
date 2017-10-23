@@ -9,9 +9,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- jQuery読み込み -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <!--(Slick)-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <!-- BootstrapのJS読み込み -->
     <script src="js/bootstrap.min.js"></script>
+    <!--slickの読み込み-->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
   </head>
   <body>
 
@@ -84,21 +91,16 @@
             <h3>Monologの特徴</h3>
           </div>
         </div>
+        <div class="kuhaku2"></div>
         <div class="row">
-          <div class="col-sm-3 col-sm-offset-3 col-md-3 col-md-offset-3">
-              <div id="myCarousel" class="carousel">
-              <!-- Carousel items -->
-              <div class="carousel-inner">
-                <div class="active item"><img src="./img/1.png"></div>
-                <div class="item"><img src="./img/2.png"></div>
-                <div class="item"><img src="./img/3.png"></div>
-              </div>
-              <!-- Carousel nav -->
-              <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-              <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+          <div class="col-sm-3 col-sm-offset-3 col-md-2 col-md-offset-3">
+             <div class="slick-box">
+              <div><img src="img/1.png" alt="サンプル" width="200" height="200"></div>
+              <div><img src="img/2.png"  alt="サンプル" width="200" height="200"></div>
+              <div><img src="img/3.png"  alt="サンプル" width="200" height="200"></div>
             </div>
          </div>
-         <div class="col-sm-3 col-md-3">
+         <div class="col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-1">
            <p>Twitterとは似て非なるものです。</p>
            <p>ツイート、タイムライン、お気に入り登録機能は似ていますが、以下が違います。</p>
            <p>1. Monologにはフォロー、フォロワーの概念がなくMonologに登録されている全ユーザの投稿の中からランダムにタイムラインに表示されます。</p>
@@ -115,6 +117,7 @@
       </p>
     </div>
 
+    <!--フォームの色変更-->
      <script>
          $(function(){
            $('input').focus(function(){
@@ -124,10 +127,16 @@
            });
          });
      </script>
+
+     <!--画像のスライド-->
      <script>
-        $('.myCarousel').carousel({
-            interval: 2000
-         })       
+        $(function() {
+          $('.slick-box').slick({
+                autoplay: true, //オートプレイ
+    	        	autoplaySpeed: 2000 //オートプレイの切り替わり時間
+ 
+           }); 
+        });
      </script>
 
 
